@@ -24,6 +24,7 @@ from FKIP.views import prodi6
 from FT.views import prodi7
 from PASCASARJANA.views import prodi8
 from PROFIL.views import profil
+from UNIVERSITAS.views import universitas
 
 
 
@@ -38,6 +39,7 @@ urlpatterns = [
     path('FT/', prodi7),
     path('PASCASARJANA/', prodi8),
     path('PROFIL/', profil),
+    path('UNIVERSITAS/', universitas),
     
    
 ]
