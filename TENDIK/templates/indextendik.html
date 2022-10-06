@@ -1,0 +1,28 @@
+{% block content %}
+
+    <center>
+        <h1>DAFTAR TENDIK PENDIDIKAN MATEMATIKA</h1>
+        <h2>TAHUN 2022-2023</h2>
+    </center>
+    <table border="1"></table>
+        <tr>
+            <th>No</th>
+            <th>NAMA_JABATAN</th>
+            <th>Nama</th>
+            <th>NIP</th>
+        </tr>
+
+    {% for post in posts %}
+    
+        <tr>
+            <td>{{tendik.no}}</td>
+            <td>{{tendik.nama_jabatan}}</td>
+            <td>{{tendik.nama}}</td>
+            <td>{{tendik.nip}}</td>
+        </tr>
+        {% endfor %}
+    
+    </table>
+
+
+{% endblock %}

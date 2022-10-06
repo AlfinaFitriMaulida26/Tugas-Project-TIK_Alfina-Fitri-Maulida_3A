@@ -1,0 +1,33 @@
+{% block content %}
+
+    <center>
+        <h1>DAFTAR DOSEN PENDIDIKAN MATEMATIKA</h1>
+        <h2>TAHUN 2022-2023</h2>
+    </center>
+    <table border="1"></table>
+        <tr>
+            <th>No</th>
+            <th>NIP</th>
+            <th>NIDN</th>
+            <th>Nama</th>
+            <th>Jabatan</th>
+            <th>Email</th>
+            <th>Foto</th>
+        </tr>
+
+    {% for post in posts %}
+    
+        <tr>
+            <td>{{dosen.nip}}</td>
+            <td>{{dosen.nidn}}</td>
+            <td>{{dosen.nama}}</td>
+            <td>{{dosen.jabatan}}</td>
+            <td>{{dosen.email}}</td>
+            <td>{{dosen.foto}}</td>
+        </tr>
+        {% endfor %}
+    
+    </table>
+
+
+{% endblock %}

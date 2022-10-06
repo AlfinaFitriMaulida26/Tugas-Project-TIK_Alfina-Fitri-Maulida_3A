@@ -47,6 +47,12 @@ INSTALLED_APPS = [
     'PASCASARJANA',
     'PROFIL',
     'UNIVERSITAS',
+    'DOSEN',
+    'MAHASISWA',
+    'TENDIK',
+    
+    
+   
     
    
     
