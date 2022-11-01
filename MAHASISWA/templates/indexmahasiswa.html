@@ -1,37 +1,57 @@
+{% extends 'base.html' %}
+
 {% block content %}
 
-    <center>
-        <h1>DAFTAR MAHASISWA PENDIDIKAN MATEMATIKA</h1>
-        <h2>KELAS 3A</h2>
-    </center>
-    <table border="1">
-        <tr>
-            <th>No</th>
-            <th>NIM</th>
-            <th>Nama</th>
-            <th>Tempat Tanggal Lahir</th>
-            <th>Email</th>
-            <th>Fakultas</th>
-            <th>Prodi</th>
-            <th>Alamat</th>
-            <th>Foto</th>
-        </tr>
+<center>
+    <h2>DAFTAR MAHASISWA PENDIDIKAN MATEMATIKA</h2>
+    <h2>KELAS 3A</h2>
+</center>
 
-    {% for post in posts %}
-    
-        <tr>
-            <td>{{mahasiswa.nim}}</td>
-            <td>{{mahasiswa.nama}}</td>
-            <td>{{mahasiswa.ttl}}</td>
-            <td>{{mahasiswa.email}}</td>
-            <td>{{mahasiswa.fakultas}}</td>
-            <td>{{mahasiswa.prodi}}</td>
-            <td>{{mahasiswa.alamat}}</td>
-            <td>{{mahasiswa.foto}}</td>
-        </tr>
-        {% endfor %}
-    
-    </table>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h4>
+                Data mahasiswa
+                <a href="{% url 'tambah_mahasiswa' %}">Add</a>
+            </h4>
 
+            {% for message in messages %}
+            {% if message %}
+                <div class="alert alert-success">{{ message }}</div>
+            {% endif %}
+            {% endfor %}
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>NIM</th>
+                        <th>NAMA</th>
+                        <th>TTL</th>
+                        <th>EMAIL</th>
+                        <th>FAKULTAS</th>
+                        <th>PRODI</th>
+                        <th>ALAMAT</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+                <body>
+                    {% for mahasiswa in student %}
+                    <tr>
+                        <td>{{ mahasiswa.nim }}</td>
+                        <td><a href="/mahasiswa/ubah/{{ mahasiswa.id }}">{{ mahasiswa.nama }}</a></td>
+                        <td>{{ mahasiswa.ttl }}</td>
+                        <td>{{ mahasiswa.email }}</td>
+                        <td>{{ mahasiswa.fakultas }}</td>
+                        <td>{{ mahasiswa.prodi }}</td>
+                        <td>{{ mahasiswa.alamat }}</td>
+                        <td>
+                            <a href="/mahasiswa/hapus/{{ mahasiswa.id }}" class="btn btn-danger">Delete</a>
+                        </td>       
+                    </tr>
+                    {% endfor %}
+                </body>
+            </table>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
